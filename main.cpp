@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <cstdio>
 #include <cstring>
+#include <iostream>
 
-#define BUF_SZ 20480
+#define BUF_SZ 1024
 
 void print_help_exit()
 {
@@ -16,16 +17,22 @@ std::string* handle_file(char **argv, int argc, int index) {
         char buffer[BUF_SZ];
         FILE* f = fopen(argv[index], "r");
         if(f){
-            fread(buffer, sizeof(char), BUF_SZ - 1, f);
+            std::string *str = new std::string();
+            int c;
+            while(!feof(f) && (c = fread(buffer, sizeof(char), BUF_SZ - 1, f))){
+                buffer[c] = 0;
+                str->append(buffer);
+            }
             fclose(f);
-            return new std::string((const char *)buffer);
+            return str;
             }
     }
     print_help_exit();
+    return nullptr;
 }
 
 std::string* handle_arg_string(char **argv, int argc, int index) {
-
+    return nullptr;
 }
 
 int main(int argc, char **argv)

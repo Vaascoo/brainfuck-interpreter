@@ -55,8 +55,8 @@ int main(int argc, char **argv)
     if(code == nullptr)
         print_help_exit();
 
-    bf::Interpreter intepreter = bf::Interpreter(*code);
-    intepreter.run();
+    bf::Interpreter interpreter = bf::Interpreter(*code);
+    interpreter.run();
 
     delete code;
     return 0;

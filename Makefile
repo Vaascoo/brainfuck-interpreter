@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -g -O3 -Wall
+CFLAGS = -O3 -Wall
 all: bf main
 	$(CC) $(CFLAGS) -o interpreter bf.o main.o
 main:

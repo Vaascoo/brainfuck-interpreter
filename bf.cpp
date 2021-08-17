@@ -34,7 +34,7 @@ void bf::Interpreter::init_jmp_tb()
 
 void bf::Interpreter::dec_ptr()
 {
-    _pointer = (_pointer - 1) % _tape.size();
+    _pointer = _pointer > 0 ? (_pointer - 1) : 0;
 }
 
 void bf::Interpreter::inc_ptr()

@@ -8,7 +8,7 @@
 
 void print_help_exit()
 {
-    perror("Usage:\n\t./brainfuck.py -f <file-path> \n\t\tOR\n\t./braifuck.py -c <code>");
+    perror("Usage:\n\t./interpreter -f <file-path> \n\t\tOR\n\t./interpreter -c <code>");
     exit(EXIT_FAILURE);
 }
 

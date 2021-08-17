@@ -82,28 +82,28 @@ void bf::Interpreter::run()
     {
         switch (_code[_pc])
         {
-        case '<':
+        case BF_DEC_PTR:
             dec_ptr();
             break;
-        case '>':
+        case BF_INC_PTR:
             inc_ptr();
             break;
-        case '+':
+        case BF_INC_MEM:
             inc_mem();
             break;
-        case '-':
+        case BF_DEC_MEM:
             dec_mem();
             break;
-        case '.':
+        case BF_OUT:
             out();
             break;
-        case ',':
+        case BF_IN:
             in();
             break;
-        case '[':
+        case BF_JMP_FW:
             jmp_fw();
             break;
-        case ']':
+        case BF_JMP_BCK:
             jmp_bck();
             break;
         }
